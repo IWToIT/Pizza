@@ -10,6 +10,7 @@ import PizzaBlock from "../components/PizzaBlock";
 import Skeleton from "../components/PizzaBlock/Skeleton";
 import Pagination from "../components/Pagination";
 import { sortList } from "../components/Sort";
+import { PizzaBlockItem } from "../components/PizzaBlock";
 
 import {
   selectFilter,
@@ -89,7 +90,7 @@ const Home = () => {
     isMounted.current = true;
   }, []);
 
-  const pizzas = items.map((obj: any) => (
+  const pizzas = items.map((obj: PizzaBlockItem) => (
     <Link key={obj.id} to={`/pizza/${obj.id}`}>
       <PizzaBlock {...obj} />
     </Link>

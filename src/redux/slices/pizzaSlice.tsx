@@ -21,7 +21,7 @@ export const fetchPizzas = createAsyncThunk<PizzaBlockItem[], ParamsFetch>('pizz
   return data;
 });
 
-enum Status {
+export const enum Status {
   LOADING = 'loading',
   SUCCESS = 'success',
   ERROR = 'error'
