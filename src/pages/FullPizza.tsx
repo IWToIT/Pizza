@@ -1,9 +1,15 @@
 import React from 'react';
 import axios from 'axios';
 import { useParams, useNavigate } from 'react-router-dom';
+import { Status } from '../redux/slices/pizzaSlice'
 
 const FullPizza = () => {
-  const [pizza, setPizza] = React.useState();
+  const [pizza, setPizza] = React.useState<{
+    imageUrl: string;
+    title: string;
+    price: string;
+  }>();
+  
   const { id } = useParams();
   const navigate = useNavigate();
 
@@ -22,12 +28,12 @@ const FullPizza = () => {
   }, []);
 
   if (!pizza) {
-    return 'Загрузка...';
+    return <div>${Status.LOADING}</div>;
   }
 
   return (
     <div className="container">
-      <img src={pizza.imageUrl} />
+      <img src={pizza.imageUrl} alt={pizza.title} />
       <h2>{pizza.title}</h2>
       <h4>{pizza.price} ₽</h4>
     </div>
