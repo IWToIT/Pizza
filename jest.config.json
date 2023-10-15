@@ -1,5 +1,9 @@
 {
   "moduleNameMapper": {
     "^.+\\.(css|less|scss)$": "babel-jest"
-  }
+  },
+  "testEnvironment": "jest-environment-jsdom",
+  "setupFilesAfterEnv": [
+    "<rootDir>/src/setupTests.ts"
+  ]
 }
