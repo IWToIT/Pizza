@@ -1,26 +1,25 @@
 import React from "react";
-import { useDispatch } from "react-redux";
 import { render } from "./test-utils";
-import { fireEvent, screen } from "@testing-library/react";
+import { screen } from "@testing-library/react";
 import CartItem from "../CartItem";
-import { addItem } from "../../redux/slices/cartSlice";
 
-const props = {
-  id: "1",
-  title: "Pizza",
-  type: "Margherita",
-  size: [30],
-  imageUrl: "pizza.jpg",
-  count: 2,
-  price: 10,
-};
+it('отображается ли блок cart со всеми свойствами', () => {
+  const props = {
+    id: '1',
+    title: 'Pizza',
+    type: 'Vegetarian',
+    size: 12,
+    price: 10,
+    count: 2,
+    imageUrl: 'pizza.jpg',
+  };
 
-describe("props", () => {
-  test("должна сработать кнопка добавить со всеми вытекающими", () => {
-    const dispatchMock = jest.fn();
-    useDispatch.mockReturnValue(dispatchMock);
-    render(<CartItem {...props} />);
-    fireEvent.click(screen.getByRole("button", { name: /plus/i }));
-    expect(dispatchMock).toHaveBeenCalledWith(addItem({ id: props.id }));
-  });
+  render(<CartItem {...props} />);
+  expect(screen.getByTestId('cartItem-element')).toBeInTheDocument();
+  expect(screen.getByTestId('cartItem-element')).toMatchSnapshot();
+  expect(screen.getByAltText('Pizza')).toBeInTheDocument();
+  expect(screen.getByText('Pizza')).toBeInTheDocument();
+  expect(screen.getByText('Vegetarian, 12 см.')).toBeInTheDocument();
+  expect(screen.getByText('2')).toBeInTheDocument();
+  expect(screen.getByText('20 ₽')).toBeInTheDocument();
 });

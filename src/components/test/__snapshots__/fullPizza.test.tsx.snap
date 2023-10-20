@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`отображается ли пицца при успешном получении данных 1`] = `
+<div
+  class="container"
+  data-testid="container-element"
+>
+  <img
+    alt="testTitle"
+    src="testImageUrl"
+  />
+  <h2>
+    testTitle
+  </h2>
+  <h4>
+    testPrice
+     ₽
+  </h4>
+</div>
+`;

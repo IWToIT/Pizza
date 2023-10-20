@@ -7,6 +7,8 @@ test('выделение активной категории', () => {
   const value = 2;
   const onChangeCategory = jest.fn();
   render(<Categories value={value} onChangeCategory={onChangeCategory} />);
+  expect(screen.getByTestId('cat-element')).toBeInTheDocument();
+  expect(screen.getByTestId('cat-element')).toMatchSnapshot();
   const categoryList = screen.getByRole('list');
   const categoryItems = within(categoryList).getAllByRole('listitem');
   expect(categoryItems[2]).toHaveClass('active');

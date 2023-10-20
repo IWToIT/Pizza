@@ -7,7 +7,7 @@ type CartItemProps = {
   id: string;
   title: string;
   type: string;
-  size: [number];
+  size: number;
   imageUrl: string;
   count: number;
   price: number;
@@ -35,7 +35,7 @@ const CartItem: React.FC<CartItemProps> = ({ id, title, type, size, price, count
   };
 
   return (
-    <div className="cart__item">
+    <div className="cart__item" data-testid="cartItem-element">
       <div className="cart__item-img">
         <img className="pizza-block__image" src={imageUrl} alt="Pizza" />
       </div>
