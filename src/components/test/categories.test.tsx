@@ -3,7 +3,7 @@ import Categories from "../Categories";
 import { render } from "./test-utils";
 import { screen, within } from "@testing-library/react";
 
-test('выделение активной категории', () => {
+test('highlighting the active category', () => {
   const value = 2;
   const onChangeCategory = jest.fn();
   render(<Categories value={value} onChangeCategory={onChangeCategory} />);

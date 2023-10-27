@@ -3,17 +3,21 @@ import { render } from "./test-utils";
 import Header from "../Header";
 import { screen } from "@testing-library/react";
 
-it("отрисовка header с лого, тайтлом и поисковой строкой", () => {
+test("rendering header with logo, title and search bar", () => {
+  const mockUseSelector = jest.fn() ;
   jest.mock("react-redux", () => ({
-    useSelector: jest.fn(),
+    useSelector: mockUseSelector,
   }));
+  const mockUseLocation = jest.fn();
   jest.mock("react-router-dom", () => ({
-    useLocation: jest.fn(),
+    useLocation: mockUseLocation,
   }));
   render(<Header />);
   expect(screen.getByAltText("Pizza logo")).toBeInTheDocument();
   expect(screen.getByText("React Pizza V2")).toBeInTheDocument();
   expect(screen.getByPlaceholderText("Поиск пиццы...")).toBeInTheDocument();
-  expect(screen.getByTestId('header-element')).toBeInTheDocument();
-  expect(screen.getByTestId('header-element')).toMatchSnapshot();
+  expect(screen.getByTestId("header-element")).toBeInTheDocument();
+  expect(screen.getByTestId("header-element")).toMatchSnapshot();
+  expect(mockUseLocation).toHaveBeenCalled();
+  expect(mockUseSelector).toHaveBeenCalled();
 });

@@ -3,7 +3,7 @@ import Sort from "../Sort";
 import { fireEvent, render } from "./test-utils";
 import { screen } from '@testing-library/react'
 
-it('должно не закрывать попап окно при клике на область вне попап блока', () => {
+it('it should not close the pop-up window when clicking on the area outside the pop-up block', () => {
   render(<Sort />);
   fireEvent.click(document.body);
   expect(screen.getByTestId('sort-element')).toBeInTheDocument();

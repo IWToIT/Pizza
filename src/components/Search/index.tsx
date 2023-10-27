@@ -5,7 +5,7 @@ import debounce from 'lodash.debounce';
 
 import styles from './Search.module.scss';
 
-const Search = () => {
+export const Search = () => {
   const dispatch = useDispatch();
   const [value, setValue] = React.useState('');
   const inputRef = React.useRef<HTMLInputElement>(null);

@@ -3,7 +3,7 @@ import { render } from "./test-utils";
 import { screen } from "@testing-library/react";
 import CartItem from "../CartItem";
 
-it('отображается ли блок cart со всеми свойствами', () => {
+test('is the cart block displayed with all the properties', () => {
   const props = {
     id: '1',
     title: 'Pizza',
