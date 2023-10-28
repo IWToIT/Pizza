@@ -41,7 +41,7 @@ function Sort() {
   }, []);
 
   return (
-    <div ref={sortRef} className="sort">
+    <div ref={sortRef} data-testid="sort-element" className="sort">
       <div className="sort__label">
         <svg
           width="10"

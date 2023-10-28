@@ -23,7 +23,7 @@ const Cart = () => {
 
   return (
     <div className="container container--cart">
-      <div className="cart">
+      <div className="cart" data-testid="cart-element">
         <div className="cart__top">
           <h2 className="content__title">
             <svg

@@ -101,7 +101,7 @@ const Home = () => {
 
   return (
     <div className="container">
-      <div className="content__top">
+      <div className="content__top" data-testid="content-element">
         <Categories value={categoryId} onChangeCategory={onChangeCategory} />
         <Sort />
       </div>
