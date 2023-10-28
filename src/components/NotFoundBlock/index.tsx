@@ -5,7 +5,7 @@ import styles from './NotFoundBlock.module.scss';
 const NotFoundBlock = () => {
   return (
     <div className={styles.root}>
-      <h1>
+      <h1 data-testid="h1-tag">
         <span>😕</span>
         <br />
         Nothing found

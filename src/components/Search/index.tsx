@@ -5,7 +5,7 @@ import debounce from 'lodash.debounce';
 
 import styles from './Search.module.scss';
 
-const Search = () => {
+export const Search = () => {
   const dispatch = useDispatch();
   const [value, setValue] = React.useState('');
   const inputRef = React.useRef<HTMLInputElement>(null);
@@ -14,16 +14,15 @@ const Search = () => {
     dispatch(setSearchValue(''));
     setValue('');
     if (inputRef.current !== null) {
-      inputRef.current.focus();;
+      inputRef.current.focus();
     }
-    
   };
 
   const updateSearchValue = React.useCallback(
     debounce((str: string): void => {
       dispatch(setSearchValue(str));
     }, 150),
-    [],
+    []
   );
 
   const onChangeInput = (event: React.ChangeEvent<HTMLInputElement>) => {

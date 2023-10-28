@@ -13,7 +13,7 @@ function Header() {
   const totalCount = items.reduce((sum: number, item: any) => sum + item.count, 0);
 
   return (
-    <div className="header">
+    <div className="header" data-testid="header-element">
       <div className="container">
         <Link to="/">
           <div className="header__logo">
