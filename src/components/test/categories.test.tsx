@@ -1,5 +1,5 @@
 import React from "react";
-import Categories from "../Categories";
+import { Categories } from "../Categories";
 import { render } from "./test-utils";
 import { screen, within } from "@testing-library/react";
 

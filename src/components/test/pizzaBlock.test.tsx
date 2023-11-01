@@ -1,7 +1,7 @@
 import React from "react";
 import { fireEvent, screen } from "@testing-library/react";
 import { render } from "./test-utils";
-import PizzaBlock from "../PizzaBlock";
+import { PizzaBlock } from "../PizzaBlock";
 
 const pizzaBlockItem = {
   id: "1",

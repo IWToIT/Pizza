@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useParams, useNavigate } from 'react-router-dom';
 import { Status } from '../redux/slices/pizzaSlice'
 
-const FullPizza = () => {
+export const FullPizza = () => {
   const [pizza, setPizza] = React.useState<{
     imageUrl: string;
     title: string;
@@ -39,5 +39,3 @@ const FullPizza = () => {
     </div>
   );
 };
-
-export default FullPizza;

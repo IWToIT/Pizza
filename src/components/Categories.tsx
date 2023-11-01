@@ -1,11 +1,11 @@
 import React from 'react';
 
-type CategoriesType = {
+export type CategoriesType = {
   value: number;
   onChangeCategory: (index: number) => void;
 }
 
-const Categories: React.FC<CategoriesType> = ({ value, onChangeCategory }) => {
+export const Categories: React.FC<CategoriesType> = ({ value, onChangeCategory }) => {
   const categories = ['Все', 'Мясные', 'Вегетарианская', 'Гриль', 'Острые', 'Закрытые'];
 
   return (
@@ -20,5 +20,3 @@ const Categories: React.FC<CategoriesType> = ({ value, onChangeCategory }) => {
     </div>
   );
 }
-
-export default Categories;

@@ -1,7 +1,7 @@
 import React from "react";
 import { render } from "./test-utils";
 import { screen } from "@testing-library/react";
-import CartItem from "../CartItem";
+import { CartItem } from "../CartItem";
 
 test('is the cart block displayed with all the properties', () => {
   const props = {

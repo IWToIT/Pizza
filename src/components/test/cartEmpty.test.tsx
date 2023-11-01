@@ -1,5 +1,5 @@
 import React from 'react'
-import CartEmpty from '../CartEmpty'
+import { CartEmpty } from '../CartEmpty'
 import { screen } from '@testing-library/react'
 import { render } from "./test-utils"
 

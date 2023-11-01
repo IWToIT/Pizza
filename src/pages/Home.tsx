@@ -3,15 +3,12 @@ import qs from "qs";
 import { useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { useAppDispatch } from '../redux/store';
-
-import Categories from "../components/Categories";
-import Sort from "../components/Sort";
-import PizzaBlock from "../components/PizzaBlock";
+import { Categories } from "../components/Categories";
+import { Sort } from "../components/Sort";
+import { PizzaBlock } from "../components/PizzaBlock";
 import Skeleton from "../components/PizzaBlock/Skeleton";
-import Pagination from "../components/Pagination";
+import { Pagination } from "../components/Pagination";
 import { sortList } from "../components/Sort";
-import { PizzaBlockItem } from "../components/PizzaBlock";
-
 import {
   selectFilter,
   setCategoryId,
@@ -20,7 +17,7 @@ import {
 } from "../redux/slices/filterSlice";
 import { fetchPizzas, selectPizzaData } from "../redux/slices/pizzaSlice";
 
-const Home = () => {
+export const Home = () => {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
   const isMounted = React.useRef(false);
@@ -90,7 +87,7 @@ const Home = () => {
     isMounted.current = true;
   }, []);
 
-  const pizzas = items.map((obj: PizzaBlockItem) => (
+  const pizzas = items.map((obj) => (
     <Link key={obj.id} to={`/pizza/${obj.id}`}>
       <PizzaBlock {...obj} />
     </Link>
@@ -124,5 +121,3 @@ const Home = () => {
     </div>
   );
 };
-
-export default Home;

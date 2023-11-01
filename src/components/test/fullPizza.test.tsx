@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios";
 import { render } from "./test-utils";
 import { screen, waitFor } from "@testing-library/react";
-import FullPizza from "../../pages/FullPizza";
+import { FullPizza } from "../../pages/FullPizza";
 
 test('is pizza displayed when data is received successfully', async () => {
   const testData = {

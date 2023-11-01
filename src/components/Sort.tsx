@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectSort, setSort } from '../redux/slices/filterSlice';
 
-type SortList = {
+export type SortList = {
   name: string;
   sortProperty: string;
 };
@@ -16,7 +16,7 @@ export const sortList: SortList[]= [
   { name: 'алфавиту (ASC)', sortProperty: '-title' },
 ];
 
-function Sort() {
+export const Sort = () => {
   const dispatch = useDispatch();
   const sort = useSelector(selectSort);
   const sortRef = React.useRef<HTMLInputElement>(null);
@@ -74,5 +74,3 @@ function Sort() {
     </div>
   );
 }
-
-export default Sort;
