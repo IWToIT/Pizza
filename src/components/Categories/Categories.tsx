@@ -5,7 +5,7 @@ export type CategoriesType = {
   onChangeCategory: (index: number) => void;
 }
 
-export const Categories: React.FC<CategoriesType> = ({ value, onChangeCategory }) => {
+const Categories: React.FC<CategoriesType> = ({ value, onChangeCategory }) => {
   const categories = ['Все', 'Мясные', 'Вегетарианская', 'Гриль', 'Острые', 'Закрытые'];
 
   return (
@@ -20,3 +20,5 @@ export const Categories: React.FC<CategoriesType> = ({ value, onChangeCategory }
     </div>
   );
 }
+
+export default Categories;

@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Cart } from "./Cart";
+import { FullPizza } from "./index";
 import { Provider } from "react-redux";
-import { store } from "../redux/store";
+import { store } from "../../redux/store";
 import { BrowserRouter } from "react-router-dom";
 
-const meta: Meta<typeof Cart> = {
-  component: Cart,
+const meta: Meta<typeof FullPizza> = {
+  component: FullPizza,
   decorators: [
     (Story) => (
       <BrowserRouter>
@@ -15,18 +15,9 @@ const meta: Meta<typeof Cart> = {
       </BrowserRouter>
     ),
   ],
-  args: {
-    id: '1',
-    title: 'Pizza',
-    type: 'Vegetarian',
-    size: 12,
-    price: 10,
-    count: 2,
-    imageUrl: 'pizza.jpg',
-  },
 };
 
 export default meta;
-type Story = StoryObj<typeof Cart>;
+type Story = StoryObj<typeof FullPizza>;
 
 export const Primary: Story = {};

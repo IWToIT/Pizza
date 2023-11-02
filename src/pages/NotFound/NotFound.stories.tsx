@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { NotFound } from "./NotFound";
+import { NotFound } from "./index";
 // import { Provider } from "react-redux";
 // import { store } from "../redux/store";
 // import { BrowserRouter } from "react-router-dom";
