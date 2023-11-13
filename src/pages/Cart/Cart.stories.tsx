@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Cart } from "./index";
 import { Provider } from "react-redux";
-import { store } from "../../redux/store";
+import { store } from "@/redux/store";
 import { BrowserRouter } from "react-router-dom";
 
 const meta: Meta<typeof Cart> = {

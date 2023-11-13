@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
-import { Status } from "../../redux/slices/pizzaSlice";
+import { Status } from "@/redux/slices/pizzaSlice";
 
 const FullPizza = () => {
   const [pizza, setPizza] = React.useState<{

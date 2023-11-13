@@ -5,7 +5,7 @@ const meta: Meta<typeof Sort> = {
   component: Sort,
   decorators: [
     (Story) => (
-      <div style={{ display: "flex", justifyContent: "end" }}>
+      <div style={{ display: "flex", justifyContent: "center" }}>
         <Story />
       </div>
     ),

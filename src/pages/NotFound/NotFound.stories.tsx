@@ -6,15 +6,6 @@ import { NotFound } from "./index";
 
 const meta: Meta<typeof NotFound> = {
   component: NotFound,
-  // decorators: [
-  //   (Story) => (
-  //     <BrowserRouter>
-  //       <Provider store={store}>
-  //         <Story />
-  //       </Provider>
-  //     </BrowserRouter>
-  //   ),
-  // ],
 };
 
 export default meta;

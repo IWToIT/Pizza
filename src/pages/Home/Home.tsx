@@ -2,20 +2,20 @@ import React from "react";
 import qs from "qs";
 import { useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
-import { useAppDispatch } from "../../redux/store";
-import { Categories } from "../../components/Categories";
-import { Sort } from "../../components/Sort";
-import { PizzaBlock } from "../../components/PizzaBlock";
-import Skeleton from "../../components/PizzaBlock/Skeleton";
-import { Pagination } from "../../components/Pagination";
-import { sortList } from "../../components/Sort/Sort";
+import { useAppDispatch } from "@/redux/store";
+import { Categories } from "@/components/Categories";
+import { Sort } from "@/components/Sort";
+import { PizzaBlock } from "@/components/PizzaBlock";
+import Skeleton from "@/components/PizzaBlock/Skeleton";
+import { Pagination } from "@/components/Pagination";
+import { sortList } from "@/components/Sort/Sort";
 import {
   selectFilter,
   setCategoryId,
   setCurrentPage,
   setFilters,
-} from "../../redux/slices/filterSlice";
-import { fetchPizzas, selectPizzaData } from "../../redux/slices/pizzaSlice";
+} from "@/redux/slices/filterSlice";
+import { fetchPizzas, selectPizzaData } from "@/redux/slices/pizzaSlice";
 
 export const Home = () => {
   const navigate = useNavigate();
@@ -55,10 +55,10 @@ export const Home = () => {
 
   // Если изменили параметры и был первый рендер
   React.useEffect(() => {
-    if (isMounted.current) {
+    if (isMounted.current && sort && sort.sortProperty) {
       const params = {
         categoryId: categoryId > 0 ? categoryId : null,
-        sortProperty: sort.sortProperty,
+        sortProperty: sort?.sortProperty,
         currentPage,
       };
 
@@ -66,7 +66,7 @@ export const Home = () => {
 
       navigate(`/?${queryString}`);
     }
-  }, [categoryId, sort.sortProperty, searchValue, currentPage]);
+  }, [categoryId, sort?.sortProperty, searchValue, currentPage, navigate]);
 
   React.useEffect(() => {
     getPizzas();

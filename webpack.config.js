@@ -1,3 +1,4 @@
+import path from 'path';
 module.exports = {
   module: {
     rules: [
@@ -21,6 +22,9 @@ module.exports = {
     ],
   },
   resolve: {
+    alias: {
+      '@': path.resolve(__dirname, 'src/')
+    },
     extensions: ['.js', '.jsx'],
     modules: [
       'node_modules',

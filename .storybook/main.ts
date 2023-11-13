@@ -1,3 +1,4 @@
+import path from 'path';
 module.exports = {
   typescript: {
     check: true,
@@ -23,4 +24,13 @@ module.exports = {
     autodocs: "tag",
   },
   staticDirs: ["..\\public"],
+  webpackFinal: async (config) => {
+    if (config.resolve) {
+      config.resolve.alias = {
+        ...config.resolve.alias,
+        '@': path.resolve('src'),
+      };
+    }
+    return config;
+  },
 };
