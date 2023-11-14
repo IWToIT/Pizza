@@ -1,36 +1,49 @@
-import path from 'path';
+const path = require("path");
 module.exports = {
+  entry: {
+    main: path.resolve(__dirname, "./src/index.tsx"),
+  },
+  output: {
+    path: path.resolve(__dirname, "./dist"),
+    filename: "[name].bundle.js",
+  },
   module: {
     rules: [
       {
         test: /\.jsx?$/,
-        exclude: ['node_modules'],
-        use: ['babel-loader'],
+        exclude: [path.resolve(__dirname, "node_modules")],
+        use: ["babel-loader"],
+      },
+      {
+        test: /\.(ts|tsx)$/,
+        use: ["ts-loader"],
+        exclude: /node_modules/,
       },
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader'],
+        use: ["style-loader", "css-loader"],
       },
       {
         test: /\.gif$/,
-        type: 'asset/inline',
+        type: "asset/inline",
       },
       {
         test: /\.(ttf|eot|svg)$/,
-        type: 'asset/resource',
+        type: "asset/resource",
       },
     ],
   },
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, 'src/')
+      "@": path.resolve(__dirname, "src/"),
     },
-    extensions: ['.js', '.jsx'],
+    extensions: [".js", ".jsx"],
     modules: [
-      'node_modules',
-      'bower_components',
-      'shared',
-      '/shared/vendor/modules',
+      "node_modules",
+      "bower_components",
+      "shared",
+      "/shared/vendor/modules",
     ],
   },
+  mode: "development",
 };
