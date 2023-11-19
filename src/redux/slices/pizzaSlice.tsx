@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { PizzaBlockItem } from '../../components/PizzaBlock';
+import { PizzaBlockItem } from '@/components/PizzaBlock';
 import { RootState } from '../store';
 //это просто коммит
 

@@ -1,6 +1,6 @@
 import React from "react";
 import { render } from "../test/test-utils";
-import NotFoundBlock from "../NotFoundBlock";
+import { NotFoundBlock } from "../NotFoundBlock";
 import { screen } from "@testing-library/react";
 
 test('displaying the nothing found header', () => {
