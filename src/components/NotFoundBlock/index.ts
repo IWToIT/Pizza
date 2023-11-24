@@ -1,1 +1,1 @@
-export { default as NotFoundBlock } from './NotFoundBlock';
+export { default as NotFoundBlock } from "./NotFoundBlock";

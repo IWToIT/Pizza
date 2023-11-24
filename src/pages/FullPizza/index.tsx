@@ -1,1 +1,1 @@
-export { default as FullPizza} from './FullPizza';
+export { default as FullPizza } from "./FullPizza";

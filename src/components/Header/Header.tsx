@@ -12,7 +12,7 @@ const Header = () => {
 
   const totalCount = items.reduce(
     (sum: number, item: any) => sum + item.count,
-    0
+    0,
   );
 
   return (

@@ -22,7 +22,7 @@ const Search = () => {
     debounce((str: string): void => {
       dispatch(setSearchValue(str));
     }, 150),
-    []
+    [],
   );
 
   const onChangeInput = (event: React.ChangeEvent<HTMLInputElement>) => {

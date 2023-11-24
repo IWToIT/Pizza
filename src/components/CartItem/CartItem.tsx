@@ -28,7 +28,7 @@ const CartItem: React.FC<CartItemProps> = ({
     dispatch(
       addItem({
         id,
-      })
+      }),
     );
   };
 

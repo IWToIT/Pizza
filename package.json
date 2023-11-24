@@ -24,7 +24,11 @@
     "dev": "webpack --config webpack.config.js --progress --watch",
     "build": "webpack --config webpack.config.js --progress",
     "start": "webpack serve",
-    "clean": "rd /s /q dist"
+    "clean": "rd /s /q dist",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
   },
   "eslintConfig": {
     "extends": [
@@ -74,13 +78,16 @@
     "eslint-plugin-storybook": "^0.6.15",
     "html-loader": "^4.2.0",
     "html-webpack-plugin": "^5.5.3",
+    "husky": "^8.0.3",
     "jest": "^29.7.0",
     "jest-dom": "^4.0.0",
     "jest-environment-jsdom": "^29.7.0",
+    "lint-staged": "^15.1.0",
     "mini-css-extract-plugin": "^2.7.6",
     "postcss": "^8.4.31",
     "postcss-loader": "^7.3.3",
     "postcss-preset-env": "^9.3.0",
+    "prettier": "3.1.0",
     "prop-types": "^15.8.1",
     "react-test-renderer": "^18.2.0",
     "sass": "^1.69.5",

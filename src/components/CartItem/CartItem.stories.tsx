@@ -17,5 +17,4 @@ const meta: Meta<typeof CartItem> = {
 export default meta;
 type Story = StoryObj<typeof CartItem>;
 
-export const Primary: Story = {
-};
+export const Primary: Story = {};
