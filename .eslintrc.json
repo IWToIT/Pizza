@@ -14,5 +14,13 @@
     "sourceType": "module"
   },
   "plugins": ["@typescript-eslint", "react"],
-  "rules": {}
+  "rules": {},
+  "overrides": [
+    {
+      "files": ["src/**/*.ts", "src/**/*.tsx"], // или другие пути к файлам
+      "rules": {
+        // ваши правила здесь
+      }
+    }
+  ]
 }
