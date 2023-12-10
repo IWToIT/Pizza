@@ -14,7 +14,12 @@
     "sourceType": "module"
   },
   "plugins": ["@typescript-eslint", "react"],
-  "rules": {},
+  "rules": {
+    "react/no-unescaped-entities": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-uses-react": "off"
+  },
+  "ignorePatterns": ["**/*.stories.tsx"],
   "overrides": [
     {
       "files": ["src/**/*.ts", "src/**/*.tsx"], // или другие пути к файлам
