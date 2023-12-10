@@ -12,8 +12,8 @@ const pizzaBlockItem = {
   sizes: [30, 40],
 };
 
-describe('pizzaBlockItem', () => {
-  test('display the pizza block with all the contents', () => {
+describe("pizzaBlockItem", () => {
+  test("display the pizza block with all the contents", () => {
     render(<PizzaBlock {...pizzaBlockItem} />);
 
     expect(screen.getByAltText("Pizza")).toBeInTheDocument();
@@ -24,7 +24,7 @@ describe('pizzaBlockItem', () => {
     expect(screen.getByText("30 см.")).toBeInTheDocument();
     expect(screen.getByText("40 см.")).toBeInTheDocument();
   });
-  test('check the asset class by clicking on different pizza widths', () => {
+  test("check the asset class by clicking on different pizza widths", () => {
     render(<PizzaBlock {...pizzaBlockItem} />);
 
     fireEvent.click(screen.getByText("традиционное"));

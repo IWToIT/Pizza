@@ -1,18 +1,16 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { Pagination } from './index';
+import type { Meta, StoryObj } from "@storybook/react";
+import { Pagination } from "./index";
 
 const meta: Meta<typeof Pagination> = {
   component: Pagination,
-  title: 'components/Pagination',
+  title: "components/Pagination",
   args: {
     currentPage: 1,
-    onChangePage: (pageNumber: number) => {
-    },
+    onChangePage: (pageNumber: number) => {},
   },
 };
 
 export default meta;
 type Story = StoryObj<typeof Pagination>;
 
-export const Primary: Story = {
-};
+export const Primary: Story = {};

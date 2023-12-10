@@ -14,7 +14,7 @@ const meta: Meta<typeof MainLayout> = {
         </Provider>
       </BrowserRouter>
     ),
-  ], 
+  ],
 };
 
 export default meta;

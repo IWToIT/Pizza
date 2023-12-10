@@ -1,11 +1,20 @@
 const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 module.exports = {
+  mode: "development",
+  devtool: "source-map",
   entry: {
     main: path.resolve(__dirname, "./src/index.tsx"),
   },
   output: {
     path: path.resolve(__dirname, "./dist"),
-    filename: "[name].bundle.js",
+    assetModuleFilename: "assets/[hash][ext][query]",
+    filename: "[name].bundle[hash].js",
+    clean: true,
+  },
+  devServer: {
+    hot: true,
   },
   module: {
     rules: [
@@ -28,16 +37,40 @@ module.exports = {
         type: "asset/inline",
       },
       {
-        test: /\.(ttf|eot|svg)$/,
+        test: /\.(ttf|eot|svg|png)$/,
         type: "asset/resource",
+      },
+      {
+        test: /\.(html)$/,
+        use: ["html-loader"],
+      },
+      {
+        test: /\.(s[ac]|c)ss$/i,
+        use: [
+          MiniCssExtractPlugin.loader,
+          "css-loader",
+          "postcss-loader",
+          "sass-loader",
+        ],
+      },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader",
+          options: {
+            cacheDirectory: true,
+          },
+        },
       },
     ],
   },
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "src/"),
+      "@": path.resolve(__dirname, "./src"),
     },
-    extensions: [".js", ".jsx"],
+    aliasFields: ["browser"],
+    extensions: [".ts", ".tsx", ".js", ".jsx"],
     modules: [
       "node_modules",
       "bower_components",
@@ -45,5 +78,12 @@ module.exports = {
       "/shared/vendor/modules",
     ],
   },
-  mode: "development",
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: "./public/index.html",
+    }),
+    new MiniCssExtractPlugin({
+      filename: "[name].[contenthash].css", // Формат имени файла
+    }),
+  ],
 };

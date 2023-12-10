@@ -1,8 +1,8 @@
 import React from "react";
 import { Preview } from "@storybook/react";
 import { Provider } from "react-redux";
-import { store } from '../src/redux/store';
-import '../src/scss/app.scss';
+import { store } from "../src/redux/store";
+import "../src/scss/app.scss";
 
 const preview: Preview = {
   parameters: {},
@@ -12,7 +12,6 @@ const preview: Preview = {
         <Story />
       </Provider>
     ),
-    
   ],
 };
 

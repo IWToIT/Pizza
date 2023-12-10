@@ -1,11 +1,11 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { Search } from './index';
+import type { Meta, StoryObj } from "@storybook/react";
+import { Search } from "./index";
 
 const meta: Meta<typeof Search> = {
   component: Search,
   decorators: [
     (Story) => (
-      <div style={{ display: 'flex', justifyContent: 'center' }}>
+      <div style={{ display: "flex", justifyContent: "center" }}>
         <Story />
       </div>
     ),
@@ -15,5 +15,4 @@ const meta: Meta<typeof Search> = {
 export default meta;
 type Story = StoryObj<typeof Search>;
 
-export const Primary: Story = {
-};
+export const Primary: Story = {};

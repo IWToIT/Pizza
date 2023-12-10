@@ -47,7 +47,7 @@ export const Home = () => {
         category,
         search,
         currentPage,
-      })
+      }),
     );
 
     window.scrollTo(0, 0);
@@ -77,7 +77,7 @@ export const Home = () => {
     if (window.location.search) {
       const params = qs.parse(window.location.search.substring(1));
       const sort = sortList.find(
-        (obj) => obj.sortProperty === params.sortProperty
+        (obj) => obj.sortProperty === params.sortProperty,
       );
       if (sort) {
         params.sort = sort;

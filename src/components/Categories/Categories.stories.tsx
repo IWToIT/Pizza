@@ -10,8 +10,7 @@ type Story = StoryObj<typeof Categories>;
 
 export const Primary: Story = {
   args: {
-    onChangeCategory: (index: number) => {
-    },
-    value: 0
-  }
+    onChangeCategory: (index: number) => {},
+    value: 0,
+  },
 };

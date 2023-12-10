@@ -17,7 +17,7 @@ const FullPizza = () => {
     async function fetchPizza() {
       try {
         const { data } = await axios.get(
-          "https://6474f3f57de100807b1bfd08.mockapi.io/pizzas/" + id
+          "https://6474f3f57de100807b1bfd08.mockapi.io/pizzas/" + id,
         );
         setPizza(data);
       } catch (error) {

@@ -1,5 +1,5 @@
-import { createSlice } from '@reduxjs/toolkit';
-import { RootState } from '../store';
+import { createSlice } from "@reduxjs/toolkit";
+import { RootState } from "../store";
 
 export type TypeOfInitial = {
   id: string;
@@ -22,7 +22,7 @@ const initialState: CartSliceReducers = {
 };
 
 const cartSlice = createSlice({
-  name: 'cart',
+  name: "cart",
   initialState,
   reducers: {
     addItem(state, action) {
@@ -59,7 +59,8 @@ const cartSlice = createSlice({
 });
 
 export const selectCart = (state: RootState) => state.cart;
-export const selectCartItemById = (id: string) => (state: RootState) => state.cart.items.find((obj: TypeOfInitial) => obj.id === id);
+export const selectCartItemById = (id: string) => (state: RootState) =>
+  state.cart.items.find((obj: TypeOfInitial) => obj.id === id);
 
 export const { addItem, removeItem, minusItem, clearItems } = cartSlice.actions;
 
