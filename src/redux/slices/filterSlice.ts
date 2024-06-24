@@ -1,18 +1,18 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { RootState } from "../store";
+import { createSlice } from '@reduxjs/toolkit';
+import { RootState } from '../store';
 
 const initialState = {
-  searchValue: "",
+  searchValue: '',
   categoryId: 0,
   currentPage: 1,
   sort: {
-    name: "популярности",
-    sortProperty: "rating",
+    name: 'популярности',
+    sortProperty: 'rating',
   },
 };
 
 const filterSlice = createSlice({
-  name: "filters",
+  name: 'filter',
   initialState,
   reducers: {
     setCategoryId(state, action) {
@@ -36,8 +36,8 @@ const filterSlice = createSlice({
         state.currentPage = 1;
         state.categoryId = 0;
         state.sort = {
-          name: "популярности",
-          sortProperty: "rating",
+          name: 'популярности',
+          sortProperty: 'rating',
         };
       }
     },
