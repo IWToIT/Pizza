@@ -1,16 +1,16 @@
-const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = {
-  mode: "development",
-  devtool: "source-map",
+  mode: 'development',
+  devtool: 'source-map',
   entry: {
-    main: path.resolve(__dirname, "./src/index.tsx"),
+    main: path.resolve(__dirname, './src/index.tsx'),
   },
   output: {
-    path: path.resolve(__dirname, "./dist"),
-    assetModuleFilename: "assets/[hash][ext][query]",
-    filename: "[name].bundle[hash].js",
+    path: path.resolve(__dirname, './dist'),
+    assetModuleFilename: 'assets/[hash][ext][query]',
+    filename: '[name].bundle[hash].js',
     clean: true,
   },
   devServer: {
@@ -20,44 +20,44 @@ module.exports = {
     rules: [
       {
         test: /\.jsx?$/,
-        exclude: [path.resolve(__dirname, "node_modules")],
-        use: ["babel-loader"],
+        exclude: [path.resolve(__dirname, 'node_modules')],
+        use: ['babel-loader'],
       },
       {
         test: /\.(ts|tsx)$/,
-        use: ["ts-loader"],
+        use: ['ts-loader'],
         exclude: /node_modules/,
       },
       {
         test: /\.css$/,
-        use: ["style-loader", "css-loader"],
+        use: ['style-loader', 'css-loader'],
       },
       {
         test: /\.gif$/,
-        type: "asset/inline",
+        type: 'asset/inline',
       },
       {
         test: /\.(ttf|eot|svg|png)$/,
-        type: "asset/resource",
+        type: 'asset/resource',
       },
       {
         test: /\.(html)$/,
-        use: ["html-loader"],
+        use: ['html-loader'],
       },
       {
         test: /\.(s[ac]|c)ss$/i,
         use: [
           MiniCssExtractPlugin.loader,
-          "css-loader",
-          "postcss-loader",
-          "sass-loader",
+          'css-loader',
+          'postcss-loader',
+          'sass-loader',
         ],
       },
       {
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader",
+          loader: 'babel-loader',
           options: {
             cacheDirectory: true,
           },
@@ -67,23 +67,23 @@ module.exports = {
   },
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "./src"),
+      '@': path.resolve(__dirname, './src'),
     },
-    aliasFields: ["browser"],
-    extensions: [".ts", ".tsx", ".js", ".jsx"],
+    aliasFields: ['browser'],
+    extensions: ['.ts', '.tsx', '.js', '.jsx'],
     modules: [
-      "node_modules",
-      "bower_components",
-      "shared",
-      "/shared/vendor/modules",
+      'node_modules',
+      'bower_components',
+      'shared',
+      '/shared/vendor/modules',
     ],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "./public/index.html",
+      template: './public/index.html',
     }),
     new MiniCssExtractPlugin({
-      filename: "[name].[contenthash].css", // Формат имени файла
+      filename: '[name].[contenthash].css', // Формат имени файла
     }),
   ],
 };
