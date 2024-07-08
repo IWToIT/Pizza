@@ -4,7 +4,5 @@
     "^.+\\.(css|less|scss)$": "babel-jest"
   },
   "testEnvironment": "jest-environment-jsdom",
-  "setupFilesAfterEnv": [
-    "<rootDir>/src/setupTests.ts"
-  ]
+  "setupFilesAfterEnv": ["<rootDir>/src/setupTests.ts"]
 }

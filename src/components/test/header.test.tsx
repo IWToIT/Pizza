@@ -1,10 +1,10 @@
 import React from "react";
 import { render } from "./test-utils";
-import Header from "../Header";
+import { Header } from "../Header";
 import { screen } from "@testing-library/react";
 
 test("rendering header with logo, title and search bar", () => {
-  const mockUseSelector = jest.fn() ;
+  const mockUseSelector = jest.fn();
   jest.mock("react-redux", () => ({
     useSelector: mockUseSelector,
   }));
