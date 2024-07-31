@@ -48,7 +48,7 @@ const CartItem: React.FC<CartItemProps> = ({ id, title, type, size, price, count
       </div>
       <div className="cart__item-count">
         <button
-          disabled={count === 1}
+          disabled={count === 0}
           onClick={onClickMinus}
           className="button button--outline button--circle cart__item-count-minus"
         >
@@ -93,7 +93,7 @@ const CartItem: React.FC<CartItemProps> = ({ id, title, type, size, price, count
         </button>
       </div>
       <div className="cart__item-price">
-        <b>{price * count} ₽</b>
+        <b>{price * count} руб.</b>
       </div>
       <div className="cart__item-remove">
         <div onClick={onClickRemove} className="button button--outline button--circle">

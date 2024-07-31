@@ -19,7 +19,7 @@ describe('pizzaBlockItem', () => {
 
     expect(screen.getByAltText('Pizza')).toBeInTheDocument();
     expect(screen.getByText('Margherita')).toBeInTheDocument();
-    expect(screen.getByText('от 10 ₽')).toBeInTheDocument();
+    expect(screen.getByText('от 10 руб.')).toBeInTheDocument();
     expect(screen.getByText('тонкое')).toBeInTheDocument();
     expect(screen.getByText('традиционное')).toBeInTheDocument();
     expect(screen.getByText('30 см.')).toBeInTheDocument();

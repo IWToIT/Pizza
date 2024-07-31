@@ -77,7 +77,7 @@ exports[`rendering header with logo, title and search bar 1`] = `
       >
         <span>
           0
-           ₽
+           руб.
         </span>
         <div
           class="button__delimiter"
@@ -197,7 +197,7 @@ exports[`отрисовка header с лого, тайтлом и поисков
       >
         <span>
           0
-           ₽
+           руб.
         </span>
         <div
           class="button__delimiter"

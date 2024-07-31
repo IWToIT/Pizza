@@ -14,7 +14,7 @@ exports[`is pizza displayed when data is received successfully 1`] = `
   </h2>
   <h4>
     testPrice
-     ₽
+     руб.
   </h4>
 </div>
 `;
@@ -33,7 +33,7 @@ exports[`отображается ли пицца при успешном пол
   </h2>
   <h4>
     testPrice
-     ₽
+     руб.
   </h4>
 </div>
 `;

@@ -27,7 +27,6 @@
     "build-storybook": "storybook build",
     "build": "webpack --mode=production",
     "dev": "webpack-dev-server --config webpack.config.js --progress --open",
-    "start": "webpack --mode=development --watch",
     "clean": "rd /s /q dist",
     "prepare": "husky install"
   },
