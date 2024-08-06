@@ -1,7 +1,7 @@
-@import "./variables";
-@import "./libs/normalize";
+@import './variables';
+@import './libs/normalize';
 
-@import "./components/all";
+@import './components/all';
 
 body {
   background-color: $background;
@@ -10,7 +10,7 @@ body {
 .wrapper {
   width: calc(100vw - 100px);
   height: 100%;
-  background-color: #fff;
+  background-color: $white;
   margin: 50px auto;
   border-radius: 10px;
   max-width: 1400px;
@@ -155,7 +155,7 @@ body {
     span {
       display: inline-block;
       margin-left: 7px;
-      color: #b6b6b6;
+      color: $app-color;
       font-size: 18px;
     }
 
@@ -168,11 +168,11 @@ body {
     &:hover {
       svg {
         path {
-          stroke: darken($color: #b6b6b6, $amount: 50);
+          stroke: darken($color: $app-color, $amount: 50);
         }
       }
       span {
-        color: darken($color: #b6b6b6, $amount: 50);
+        color: darken($color: $app-color, $amount: 50);
       }
     }
   }
@@ -215,7 +215,7 @@ body {
 
       p {
         font-size: 18px;
-        color: #8d8d8d;
+        color: $app-paragraph;
       }
     }
 
@@ -363,7 +363,7 @@ body {
       font-size: 20px;
       line-height: 145.4%;
       letter-spacing: 0.01em;
-      color: #777777;
+      color: $grey-header;
     }
 
     icon {

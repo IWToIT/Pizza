@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { useParams, useNavigate } from 'react-router-dom';
+import { pizzaData } from '@/utils/consts';
 
 const FullPizza: React.FC = () => {
   const [pizza, setPizza] = React.useState<{
@@ -16,9 +17,7 @@ const FullPizza: React.FC = () => {
   React.useEffect(() => {
     async function fetchPizza() {
       try {
-        const { data } = await axios.get(
-          'https://6474f3f57de100807b1bfd08.mockapi.io/pizzas/' + id,
-        );
+        const { data } = await axios.get(`${pizzaData}` + id);
         setPizza(data);
       } catch (error) {
         alert('Ошибка при получении пиццы!');

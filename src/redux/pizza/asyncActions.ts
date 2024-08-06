@@ -1,30 +1,25 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
-import { Pizza, SearchPizzaParams } from './types';
+import { TPizza, SearchPizzaParams } from './types';
 import pickBy from 'lodash/pickBy';
 import identity from 'lodash/identity';
+import { pizzaData } from '@/utils/consts';
 
-export const fetchPizzas = createAsyncThunk<Pizza[], SearchPizzaParams>(
+export const fetchPizzas = createAsyncThunk<TPizza[], SearchPizzaParams>(
   'pizza/fetchPizzasStatus',
   async params => {
-    const { sortBy, order, category, search, currentPage } = params;
-    console.log(params, 4444);
-    const { data } = await axios.get<Pizza[]>(
-      `https://6474f3f57de100807b1bfd08.mockapi.io/pizzas/`,
-      {
-        params: pickBy(
-          {
-            page: currentPage,
-            limit: 4,
-            category,
-            sortBy,
-            order,
-            search,
-          },
-          identity,
-        ),
-      },
-    );
+    const { sortBy, order, category, search } = params;
+    const { data } = await axios.get<TPizza[]>(`${pizzaData}`, {
+      params: pickBy(
+        {
+          category,
+          sortBy,
+          order,
+          search,
+        },
+        identity,
+      ),
+    });
 
     return data;
   },

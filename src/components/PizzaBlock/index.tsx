@@ -65,11 +65,11 @@ export const PizzaBlock: React.FC<PizzaBlockProps> = ({
             ))}
           </ul>
           <ul>
-            {sizes.map((size, i) => (
+            {sizes.map((size, sizeIndex) => (
               <li
                 key={size}
-                onClick={() => setActiveSize(i)}
-                className={activeSize === i ? 'active' : ''}
+                onClick={() => setActiveSize(sizeIndex)}
+                className={activeSize === sizeIndex ? 'active' : ''}
               >
                 {size} см.
               </li>

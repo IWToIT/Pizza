@@ -7,11 +7,10 @@ import { Categories } from '@/components/Categories';
 import { Sort } from '@/components/Sort';
 import { PizzaBlock } from '@/components/PizzaBlock';
 import Skeleton from '@/components/PizzaBlock/Skeleton';
-import { Pagination } from '@/components/Pagination';
 import { sortList } from '@/components/Sort/Sort';
 import { selectFilter } from '@/redux/filter/selectors';
 import { selectPizzaData } from '@/redux/pizza/selectors';
-import { setCategoryId, setCurrentPage, setFilters } from '@/redux/filter/slice';
+import { setCategoryId, setFilters } from '@/redux/filter/slice';
 import { fetchPizzas } from '@/redux/pizza/asyncActions';
 import { SearchPizzaParams } from '@/redux/pizza/types';
 
@@ -21,15 +20,11 @@ export const Home: React.FC = () => {
   const isMounted = React.useRef(false);
 
   const { items, status } = useSelector(selectPizzaData);
-  const { categoryId, sort, currentPage, searchValue } = useSelector(selectFilter);
+  const { categoryId, sort, searchValue } = useSelector(selectFilter);
 
   const onChangeCategory = React.useCallback((id: number) => {
     dispatch(setCategoryId(id));
   }, []);
-
-  const onChangePage = (page: number) => {
-    dispatch(setCurrentPage(page));
-  };
 
   const getPizzas = async () => {
     const sortBy = sort.sortProperty.replace('-', '');
@@ -43,7 +38,6 @@ export const Home: React.FC = () => {
         order,
         category,
         search,
-        currentPage: String(currentPage),
       }),
     );
 
@@ -67,7 +61,7 @@ export const Home: React.FC = () => {
 
   React.useEffect(() => {
     getPizzas();
-  }, [categoryId, sort.sortProperty, searchValue, currentPage]);
+  }, [categoryId, sort.sortProperty, searchValue]);
 
   // Парсим параметры при первом рендере
   // React.useEffect(() => {
@@ -102,8 +96,6 @@ export const Home: React.FC = () => {
       ) : (
         <div className="content__items">{status === 'loading' ? skeletons : pizzas}</div>
       )}
-
-      <Pagination currentPage={currentPage} onChangePage={onChangePage} />
     </div>
   );
 };

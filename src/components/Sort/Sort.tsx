@@ -3,11 +3,6 @@ import { useDispatch } from 'react-redux';
 import { Sort as SortType, SortPropertyEnum } from '@/redux/filter/types';
 import { setSort } from '@/redux/filter/slice';
 
-export type SortItem = {
-  name: string;
-  sortProperty: string;
-};
-
 type PopupClick = MouseEvent & {
   path: Node[];
 };
@@ -16,7 +11,7 @@ type SortPopupProps = {
   value: SortType;
 };
 
-export const sortList: SortItem[] = [
+export const sortList: SortType[] = [
   { name: 'популярности (DESC)', sortProperty: SortPropertyEnum.RATING_DESC },
   { name: 'популярности (ASC)', sortProperty: SortPropertyEnum.RATING_ASC },
   { name: 'цене (DESC)', sortProperty: SortPropertyEnum.PRICE_DESC },
@@ -31,7 +26,7 @@ const Sort: React.FC<SortPopupProps> = React.memo(({ value }) => {
 
   const [open, setOpen] = React.useState(false);
 
-  const onClickListItem = (obj: SortItem) => {
+  const onClickListItem = (obj: SortType) => {
     dispatch(setSort(obj));
     setOpen(false);
   };

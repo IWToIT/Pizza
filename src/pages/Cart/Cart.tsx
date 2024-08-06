@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { CartItem } from '@/components/CartItem';
@@ -10,7 +10,7 @@ const Cart: React.FC = () => {
   const dispatch = useDispatch();
   const { totalPrice, items } = useSelector(selectCart);
 
-  const totalCount = items.reduce((sum, item) => sum + item.count, 0);
+  const totalCount = useMemo(() => items.reduce((sum, item) => sum + item.count, 0), [items]);
 
   const onClickClear = () => {
     if (window.confirm('Очистить корзину?')) {

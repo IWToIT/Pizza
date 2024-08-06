@@ -1,4 +1,4 @@
-@import "../variables";
+@import '../variables';
 
 .sort {
   position: relative;
@@ -25,8 +25,8 @@
     position: absolute;
     right: 0;
     margin-top: 15px;
-    background: #ffffff;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.09);
+    background: $white;
+    box-shadow: 0px 5px 15px $black-pizza;
     border-radius: 10px;
     overflow: hidden;
     padding: 10px 0;
@@ -39,7 +39,7 @@
 
         &.active,
         &:hover {
-          background: rgba(254, 95, 30, 0.05);
+          background: $orange-sort;
         }
 
         &.active {
