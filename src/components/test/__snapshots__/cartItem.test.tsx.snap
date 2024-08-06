@@ -79,7 +79,7 @@ exports[`is the cart block displayed with all the properties 1`] = `
   >
     <b>
       20
-       ₽
+       руб.
     </b>
   </div>
   <div
@@ -188,7 +188,7 @@ exports[`should render the cart item with the correct details 1`] = `
   >
     <b>
       20
-       ₽
+       руб.
     </b>
   </div>
   <div

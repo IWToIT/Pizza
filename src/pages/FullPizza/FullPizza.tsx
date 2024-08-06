@@ -1,9 +1,10 @@
-import React from "react";
-import axios from "axios";
-import { useParams, useNavigate } from "react-router-dom";
-import { Status } from "@/redux/slices/pizzaSlice";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import axios from 'axios';
+import { useParams, useNavigate } from 'react-router-dom';
+import { pizzaData } from '@/utils/consts';
 
-const FullPizza = () => {
+const FullPizza: React.FC = () => {
   const [pizza, setPizza] = React.useState<{
     imageUrl: string;
     title: string;
@@ -16,13 +17,11 @@ const FullPizza = () => {
   React.useEffect(() => {
     async function fetchPizza() {
       try {
-        const { data } = await axios.get(
-          "https://6474f3f57de100807b1bfd08.mockapi.io/pizzas/" + id,
-        );
+        const { data } = await axios.get(`${pizzaData}` + id);
         setPizza(data);
       } catch (error) {
-        alert("Ошибка при получении пиццы!");
-        navigate("/");
+        alert('Ошибка при получении пиццы!');
+        navigate('/');
       }
     }
 
@@ -30,14 +29,19 @@ const FullPizza = () => {
   }, []);
 
   if (!pizza) {
-    return <div>${Status.LOADING}</div>;
+    return <>Загрузка...</>;
   }
 
   return (
     <div className="container" data-testid="container-element">
       <img src={pizza.imageUrl} alt={pizza.title} />
       <h2>{pizza.title}</h2>
-      <h4>{pizza.price} ₽</h4>
+      <h4>{pizza.price} руб.</h4>
+      <Link to="/">
+        <button className="button button--outline button--add">
+          <span>Назад</span>
+        </button>
+      </Link>
     </div>
   );
 };
